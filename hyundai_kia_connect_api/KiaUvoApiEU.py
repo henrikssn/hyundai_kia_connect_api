@@ -663,6 +663,8 @@ class KiaUvoApiEU(ApiImpl):
                 get_child_value(state, "Location.GeoCoord.Latitude"),
                 get_child_value(state, "Location.GeoCoord.Longitude"),
                 location_last_updated_at,
+                get_child_value(state, "Location.Heading"),
+                get_child_value(state, "Location.Speed.Value"),
             )
 
         vehicle.data = state

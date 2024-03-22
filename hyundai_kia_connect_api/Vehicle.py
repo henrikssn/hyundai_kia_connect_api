@@ -151,6 +151,8 @@ class Vehicle:
     _location_latitude: float = None
     _location_longitude: float = None
     _location_last_set_time: datetime.datetime = None
+    _location_heading: float = None
+    _location_speed: float = None
 
     # EV fields (EV/PHEV)
 
@@ -306,6 +308,16 @@ class Vehicle:
         self._location_latitude = value[0]
         self._location_longitude = value[1]
         self._location_last_set_time = value[2]
+        self._location_heading = value[3]
+        self._location_speed = value[4]
+
+    @property
+    def heading(self):
+        return self._location_heading
+    
+    @property
+    def speed(self):
+        return self._location_speed
 
     @property
     def odometer(self):
