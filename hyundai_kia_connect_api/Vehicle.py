@@ -309,7 +309,9 @@ class Vehicle:
         self._location_longitude = value[1]
         self._location_last_set_time = value[2]
         self._location_heading = value[3]
-        self._location_speed = value[4]
+        speed = value[4]
+        # Speed seems to be set to 511 when parked, this is a workaround for that.
+        self._location_speed = speed if speed < 511 else None
 
     @property
     def heading(self):
